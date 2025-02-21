@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Selection</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            background-color: #121212;
+            overflow: hidden;
+    
+    background: url('darkmode.jpg') no-repeat center center fixed;
+    background-size: cover;
+
+       
+        }
+        .game-container {
+            text-align: center;
+            padding-top: 20px;
+            overflow-y: auto;
+            max-height: 90vh;
+        }
+        .game-container img {
+            width: 150px;
+            height: 150px;
+            margin: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            object-fit: cover;
+        }
+        .game-container img:hover {
+            transform: scale(1.1);
+        }
+        .loader {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top: 5px solid #ffffff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            transform: translate(-50%, -50%);
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container" id="game-container">
+        <h1 style="color: white;">Choose a Game</h1>
+        <div>
+            <img src="1.webp" alt="Dot and Box" onclick="navigateTo('dotAndBox.html')">
+            <img src="2.webp" alt="Hangman" onclick="navigateTo('hangman.html')">
+            <img src="3.webp" alt="Math Quiz" onclick="navigateTo('mathQuiz.html')">
+            <img src="4.webp" alt="Tic Tac Toe" onclick="navigateTo('ticTacToe.html')">
+            <img src="5.webp" alt="Guess Number" onclick="navigateTo('guessNumber.html')">
+            <img src="4inarow.webp" alt="4 In A Row" onclick="navigateTo('4inarow.html')">
+            <img src="memory.webp" alt="Memory Game" onclick="navigateTo('memory.html')">
+            <img src="6.webp" alt="Astro Quiz" onclick="navigateTo('astroQuiz.html')">
+            <img src="7.webp" alt="Quiz" onclick="navigateTo('quiz.html')">
+        </div>
+    </div>
+    <div class="loader" id="loader"></div>
+    <script>
+        function navigateTo(url) {
+            document.getElementById('loader').style.display = 'block';
+            setTimeout(function() {
+                window.location.href = url;
+            }, 1000); 
+        }
+    </script>
+</body>
+</html>
